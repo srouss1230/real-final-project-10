@@ -1,4 +1,53 @@
-p{
-    background-color:blueviolet;
-    color:gold;
+.directorID{
+    display: none;
+}
+.directorName{
+    width: inherit;
+    display:block;
+    align-self: baseline;
+}
+.directorPic{
+    width: 20vw;
+    height: min-content;
+    margin: 0 auto;
+    padding: 0;
+    border: 3px solid black;
+    border-radius: 5px;
+    background-color: #282c34;
+    color: white;
+    text-align: center;
+    
+}
+@media (max-width:650px){
+    .directorPic{
+        width: 30vw;
+    }
+}
+@media (max-width:500px){
+    .directorPic{
+        width: 40vw;
+        height: min-content;
+        margin: 0 auto;
+        padding: 0;
+        border: 3px solid black;
+        border-radius: 5px;
+        background-color: #282c34;
+        color: white;
+        text-align: center;
+        align-self: baseline;
+    }
+}
+
+@media (max-width:250px){
+    .directorPic{
+        width: 50vw;
+        height: min-content;
+        margin: 0 auto;
+        padding: 0;
+        border: 3px solid black;
+        border-radius: 5px;
+        background-color: #282c34;
+        color: white;
+        text-align: center;
+    }
 }

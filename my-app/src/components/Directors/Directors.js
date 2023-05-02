@@ -1,6 +1,7 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import Director from "../Director/Director";
+import './Directors.css'
 
 
 function Directors(props) {
@@ -30,13 +31,28 @@ function Directors(props) {
                       if(job === 'Director'){
                           //stores and logs the director
                           let director =data['crew'][j];
-        
                           let directorName =data['crew'][j]['name'];
                           let directorID = data['crew'][j]['id'];
-                          let directorPic = data['crew'][j]['profile_path'];
+                          //fetches a picture for the director
+                          let pictures = 'https:/api.themoviedb.org/3/person/' + director['id'] + '/images' +'?api_key=' + api_key;
+                            fetch(pictures)
+                            .then(response => response.json())
+                            .then(data =>{
+                                if(data['profiles'][0] != null){
+                                    
+                                    let directorPic = 'https://image.tmdb.org/t/p/w500' + data['profiles'][0]['file_path'];
+                                    setDirectors(directors => [...directors, {name: directorName, id: directorID, profile_path: directorPic}]);
+
+                                }
+                                else{
+                                    
+                                    let directorPic = null;
+                                    setDirectors(directors => [...directors, {name: directorName, id: directorID, profile_path: directorPic}]);
+                                }
+                            });
+                          
                           directorFound = true;
-                          console.log(director['profile_path']);
-                          setDirectors(directors => [...directors, {name: directorName, id: directorID, profile_path: directorPic}]);
+                        //   setDirectors(directors => [...directors, {name: directorName, id: directorID, profile_path: directorPic}]);
         
                       }
                       j += 1;
@@ -47,23 +63,45 @@ function Directors(props) {
             });
         }, []);
 
+    const grabInfo = (e) => {
+        const directorID = e.currentTarget.querySelector('.directorID').innerHTML;
+        const directorName = e.currentTarget.querySelector('.directorName').innerHTML;
+        alert(directorName + ": " + directorID);
+
+        let directorLink = 'https:/api.themoviedb.org/3/person/' + directorID + '/movie_credits' +'?api_key=' + api_key;
+        fetch(directorLink)
+        .then(response => response.json())
+        .then(data =>{
+            for (let j =0; j < data['crew'].length; j++){
+                let job = data['crew'][j]['job'];
+                    if(job === 'Director'){
+                        let movieTitle = data['crew'][j]['title'];
+                        let movieID = data['crew'][j]['id'];
+                        console.log(movieTitle + ": " + movieID);
+                    }
+            }
+
+        });
+
+    }
 
     return (
         <div>
-            <h1>Directors</h1>
+            <h1 className = "titleOfPage">Directors</h1>
             {
             directors && (
-                <ul>
+                <div className = "directorsContainer">
                     {directors.map(director => (
-                        <li key={director.id}>
+                        <div className = "directorContainer" key={director.id}>
                             <Director
                                 name={director.name}
                                 id={director.id}
-                                profile_path={director.profile_path}
+                                profile_path={director.profile_path} 
+                                grabInfo={grabInfo}
                             />
-                        </li>
+                        </div>
                     ))}
-                </ul>
+                </div>
             )}
         </div>
     )
