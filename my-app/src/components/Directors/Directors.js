@@ -5,10 +5,9 @@ import './Directors.css'
 
 
 function Directors(props) {
-
     const [directors, setDirectors] = useState([]);
     const api_key = "fe80472bacff902901720dcdaf98e60c";
-
+   
     useEffect(() => {
         fetch("https:/api.themoviedb.org/3/list/8251168?api_key=" + api_key, {
             "method": "GET",
@@ -80,6 +79,7 @@ function Directors(props) {
                         console.log(movieTitle + ": " + movieID);
                     }
             }
+            
 
         });
 
