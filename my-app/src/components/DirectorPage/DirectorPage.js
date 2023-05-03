@@ -1,13 +1,13 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import Director from "../Director/Director";
-import App from "../App/App";
-import './DirectorPage.css'
 
+import './DirectorPage.css'
+import { Link } from 'react-router-dom';
 function DirectorPage(props){
     return(
         <div>
-            <h1>Director Page</h1>
+            <h1>Director Page</h1> 
+            {<Link to ="/Directors">Go Back</Link>}
         </div>
     );
 
