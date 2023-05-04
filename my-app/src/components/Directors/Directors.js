@@ -14,7 +14,6 @@ function Directors(props) {
         })
         .then(response => response.json())
         .then(data => {
-            console.log(data);
             for(let i = 0; i < data.items.length; i++) {
                 let movieId = data['items'][i]['id'];
                 let credits = 'https:/api.themoviedb.org/3/movie/' + movieId + '/credits' +'?api_key=' + api_key;
@@ -76,7 +75,6 @@ function Directors(props) {
                     if(job === 'Director'){
                         let movieTitle = data['crew'][j]['title'];
                         let movieID = data['crew'][j]['id'];
-                        console.log(movieTitle + ": " + movieID);
                     }
             }
             
