@@ -11,7 +11,6 @@ function App(props) {
                 <Route exact path="/Directors" element={<Directors/>} />
                 <Route exact path="/DirectorPage" element={<DirectorPage/>} />
             </Routes>
-            <Directors />
         </section>
     );
 

@@ -65,7 +65,7 @@ function Directors(props) {
     const grabInfo = (e) => {
         const directorID = e.currentTarget.querySelector('.directorID').innerHTML;
         const directorName = e.currentTarget.querySelector('.directorName').innerHTML;
-        alert(directorName + ": " + directorID);
+        // alert(directorName + ": " + directorID);
 
         let directorLink = 'https:/api.themoviedb.org/3/person/' + directorID + '/movie_credits' +'?api_key=' + api_key;
         fetch(directorLink)
