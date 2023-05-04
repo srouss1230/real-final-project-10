@@ -51,8 +51,18 @@ function DirectorPage(props){
 
     return(
         <div className = "pageContainer">
-        <h1 className="directorName">{name}</h1> 
-        <img className = "directorPagePic" src={profile_path} alt="could not load"></img>
+
+            <div className = "topBar">
+                <img className = "directorPagePic" src={profile_path} alt="could not load"></img>
+                
+                <h1 className="directorPageName">{name}</h1> 
+                    {<Link to ="/Directors">
+                        <button className = "closeDirectorPage">
+                            X
+                        </button>
+                    </Link>}
+
+            </div>
         {
         movies && (
             <div className = "moviesContainer">
@@ -65,7 +75,6 @@ function DirectorPage(props){
                         />
                     </div>
                 ))}
-                {<Link to ="/Directors">Back to main page</Link>}
             </div>
         )}
     </div>

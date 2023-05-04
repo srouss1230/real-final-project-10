@@ -11,9 +11,13 @@ function Movie(props){
         fetch ("https://api.themoviedb.org/3/movie/" + id + "/images?api_key=fe80472bacff902901720dcdaf98e60c")
         .then(response => response.json())
         .then(data => {
-            console.log("https://image.tmdb.org/t/p/original/" + data.posters[0].file_path);
-            setPicture ("https://image.tmdb.org/t/p/original/" + data.posters[0].file_path);
-            // setPicture(picture => [ { profile_path: "https.image.tmdb.org/t/p/original/" + data.posters[0].file_path}])
+            if(data.posters[0] != null){
+                setPicture ("https://image.tmdb.org/t/p/original/" + data.posters[0].file_path);
+            }
+            else{
+                //picture taken from the link provided
+                setPicture('https://static.displate.com/857x1200/displate/2022-04-15/7422bfe15b3ea7b5933dffd896e9c7f9_46003a1b7353dc7b5a02949bd074432a.jpg')
+            }
             
         })
     }, []);
@@ -39,11 +43,11 @@ function Movie(props){
 
     const api_key = "fe80472bacff902901720dcdaf98e60c";
     return(
-        <div>
-            <span className="movieName">{name}</span>
-            <br></br>
+        <div className = "singleMovieContainer">
 
             <img className = "moviePoster" src={picture} alt="could not load"></img>
+            <span className="moviePageMovieName">{name}</span>
+
 
         </div>
     )

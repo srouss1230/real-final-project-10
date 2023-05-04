@@ -1,17 +1,20 @@
 .movieContainer{
     display:flex;
     flex-direction:row;
+    width:min-content;
 }
 .directorPagePic{
     width: 20vw;
     height: min-content;
-    margin: 0 auto;
+    margin: 0;
     padding: 0;
     border: 3px solid black;
     border-radius: 5px;
     background-color: #282c34;
     color: white;
     text-align: center;
+    margin-left: 3vw;
+    margin-right: 3vw;
 }
 .moviesContainer{
     display: flex;
@@ -23,9 +26,29 @@
     height: 100%;
     margin: 0 auto;
     padding: 0;
+    align-items: baseline;
 }
 .pageContainer{
     border: solid black 3px;
     border-radius: 5px;
-    padding: 1vw;
+    margin: 3vw;
+}
+.topBar{
+    display: flex;
+    flex-direction: row;
+    margin-top: 1vw;
+
+}
+
+
+.directorPageName{
+    margin:0;
+    align-self: center;
+    font-family:cursive;
+    font-size:5vw;
+    flex:1;
+    margin-left:18vw;
+}
+.closeDirectorPage{
+    margin-right: 1vw;
 }
