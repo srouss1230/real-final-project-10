@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/srouss1230/real-final-project-10/tree/main/static/css/main.612ac034.css",
-    "main.js": "/srouss1230/real-final-project-10/tree/main/static/js/main.65608005.js",
-    "static/js/787.28cb0dcd.chunk.js": "/srouss1230/real-final-project-10/tree/main/static/js/787.28cb0dcd.chunk.js",
-    "index.html": "/srouss1230/real-final-project-10/tree/main/index.html",
-    "main.612ac034.css.map": "/srouss1230/real-final-project-10/tree/main/static/css/main.612ac034.css.map",
-    "main.65608005.js.map": "/srouss1230/real-final-project-10/tree/main/static/js/main.65608005.js.map",
-    "787.28cb0dcd.chunk.js.map": "/srouss1230/real-final-project-10/tree/main/static/js/787.28cb0dcd.chunk.js.map"
+    "main.css": "/real-final-project-10/static/css/main.612ac034.css",
+    "main.js": "/real-final-project-10/static/js/main.6dd86552.js",
+    "static/js/787.28cb0dcd.chunk.js": "/real-final-project-10/static/js/787.28cb0dcd.chunk.js",
+    "index.html": "/real-final-project-10/index.html",
+    "main.612ac034.css.map": "/real-final-project-10/static/css/main.612ac034.css.map",
+    "main.6dd86552.js.map": "/real-final-project-10/static/js/main.6dd86552.js.map",
+    "787.28cb0dcd.chunk.js.map": "/real-final-project-10/static/js/787.28cb0dcd.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.612ac034.css",
-    "static/js/main.65608005.js"
+    "static/js/main.6dd86552.js"
   ]
 }
