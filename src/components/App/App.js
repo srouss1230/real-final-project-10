@@ -8,7 +8,7 @@ function App(props) {
     return (
         <section>
             <Routes>    
-                <Route exact path="/" element={<Directors/>} />
+                <Route exact path="/real-final-project-10" element={<Directors/>} />
                 <Route exact path="/Directors" element={<Directors/>} />
                 <Route exact path="/DirectorPage" element={<DirectorPage/>} />
             </Routes>
