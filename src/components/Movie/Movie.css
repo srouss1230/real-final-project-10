@@ -18,3 +18,27 @@
     font-size:1.3vw;
     margin-bottom:0;
 }
+@media (max-width: 750px){
+    .moviePoster{
+        width:20vw;
+    }
+    .moviePageMovieName{
+        font-size:1.7vw;
+    }
+}
+@media (max-width: 500px){
+    .moviePoster{
+        width:25vw;
+    }
+    .moviePageMovieName{
+        font-size:2vw;
+    }
+}
+@media (max-width: 250px){
+    .moviePoster{
+        width:35vw;
+    }
+    .moviePageMovieName{
+        font-size: 3vw;
+    }
+}

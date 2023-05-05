@@ -47,8 +47,41 @@
     font-family:cursive;
     font-size:5vw;
     flex:1;
-    margin-left:18vw;
+    margin-left:15vw;
 }
 .closeDirectorPage{
     margin-right: 1vw;
+    background-color: red;
+    border: solid black;
+    border-radius: 5px;
+}
+@media (max-width: 750px){
+    .directorPageName {
+        font-size:5vw;
+        margin-left: 10vw;
+    }
+    .directorPagePic{
+        margin-right:0;
+        margin-left:3vw;
+    }
+}
+@media (max-width: 500px){
+    .directorPageName {
+        font-size:5vw;
+        margin-left: 10vw;
+    }
+    .directorPagePic{
+        margin-right:0;
+        margin-left:8vw;
+    }
+}
+@media (max-width: 250px){
+    .directorPageName {
+        font-size:6vw;
+        margin-left: 10vw;
+    }
+    .directorPagePic{
+        margin-right:0;
+        margin-left:8vw;
+    }
 }
