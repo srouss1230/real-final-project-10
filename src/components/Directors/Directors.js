@@ -9,14 +9,14 @@ function Directors(props) {
     const api_key = "fe80472bacff902901720dcdaf98e60c";
    
     useEffect(() => {
-        fetch("https:/api.themoviedb.org/3/list/8251168?api_key=" + api_key, {
+        fetch("https://api.themoviedb.org/3/list/8251168?api_key=" + api_key, {
             "method": "GET",
         })
         .then(response => response.json())
         .then(data => {
             for(let i = 0; i < data.items.length; i++) {
                 let movieId = data['items'][i]['id'];
-                let credits = 'https:/api.themoviedb.org/3/movie/' + movieId + '/credits' +'?api_key=' + api_key;
+                let credits = 'https://api.themoviedb.org/3/movie/' + movieId + '/credits' +'?api_key=' + api_key;
                 //fetches the credits for each movie on the list
                 fetch(credits)
                 .then(response => response.json())
@@ -32,7 +32,7 @@ function Directors(props) {
                           let directorName =data['crew'][j]['name'];
                           let directorID = data['crew'][j]['id'];
                           //fetches a picture for the director
-                          let pictures = 'https:/api.themoviedb.org/3/person/' + director['id'] + '/images' +'?api_key=' + api_key;
+                          let pictures = 'https://api.themoviedb.org/3/person/' + director['id'] + '/images' +'?api_key=' + api_key;
                             fetch(pictures)
                             .then(response => response.json())
                             .then(data =>{
@@ -66,7 +66,7 @@ function Directors(props) {
         const directorName = e.currentTarget.querySelector('.directorName').innerHTML;
         // alert(directorName + ": " + directorID);
 
-        let directorLink = 'https:/api.themoviedb.org/3/person/' + directorID + '/movie_credits' +'?api_key=' + api_key;
+        let directorLink = 'https://api.themoviedb.org/3/person/' + directorID + '/movie_credits' +'?api_key=' + api_key;
         fetch(directorLink)
         .then(response => response.json())
         .then(data =>{

@@ -12,7 +12,7 @@ function DirectorPage(props){
     const profile_path = location.state.profile_path;
     const [movies, setMovies] = useState([]);
     useEffect(() => {
-        let directorLink = 'https:/api.themoviedb.org/3/person/' + id + '/movie_credits' +'?api_key=' + api_key;
+        let directorLink = 'https://api.themoviedb.org/3/person/' + id + '/movie_credits' +'?api_key=' + api_key;
         fetch(directorLink)
         .then(response => response.json())
         .then(data =>{
